@@ -1,0 +1,858 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Gajraj+One&family=Playfair+Display&family=Raleway:wght@300&family=Shantell+Sans:wght@300&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ############################### Progress Bar ############################### */
+
+#myProgress {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ccc;
+    z-index: 1000;
+    display: none;
+}
+
+#myBar {
+    width: 0%;
+    height: 5px;
+    background-color: #ffaf01;
+    transition: 0.5s;
+}
+
+/* ############################### Navigation Bar ############################### */
+
+#navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 10px 0px;
+    background-color: #de8109;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+    transition: 0.3s;
+}
+
+#logo {
+    height: 80%;
+    width: auto;
+    padding: 10px;
+}
+
+#logo img {
+    width: 100%;
+    height: 100%;
+}
+
+#menu {
+    /* display: flex;
+    flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    padding: 0px 5px;
+}
+
+#menu a {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+    color: white;
+    text-decoration: none;
+    height: 80px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s;
+}
+
+#menu:hover a {
+    color: #857e7eeb;
+}
+
+#menu:hover a:hover {
+    color: rgb(10, 90, 164);
+    border-bottom: 4px solid rgb(10, 90, 164);
+}
+
+#menu:hover a:active {
+    background-color: #343434d5;
+    border-bottom: 4px solid rgb(255, 255, 255);
+    color: white;
+}
+
+
+#menu-icon {
+    display: none;
+    color: white;
+    transition: 0.5s;
+}
+
+#menuClose {
+    display: none;
+}
+
+/* ############################### Section-1 ############################### */
+
+#section-1 {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-position: bottom;
+    background-color: rgba(155, 149, 149, 0.25);
+    background-size: cover;
+    background-image: url("img/Frame 14.svg");
+}
+
+
+
+/* ############################### Text Animation ############################### */
+
+.rotating-text {
+    z-index: 20;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+    color: white;
+    transform: translateX(-120px);
+}
+
+.rotating-text div {
+    display: inline-flex;
+    margin: 0;
+    vertical-align: top;
+}
+
+.rotating-text div .word {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+}
+
+.rotating-text div .word .letter {
+    transform-origin: center center 25px;
+}
+
+.rotating-text div .word .letter.out {
+    transform: rotateX(90deg);
+    transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+}
+
+.rotating-text div .word .letter.in {
+    transition: 0.38s ease;
+}
+
+.rotating-text div .word .letter.behind {
+    transform: rotateX(-90deg);
+}
+
+.w-1 {
+    color: #f1078c;
+}
+
+.w-2 {
+    color: #0eb0f6;
+}
+
+.w-3 {
+    color: #8c0458;
+}
+
+.w-4 {
+    color: #54d007;
+}
+
+.w-5 {
+    color: #034478;
+}
+
+/* ############################### Section-2 ############################### */
+#section-2 {
+    background-color: rgba(155, 149, 149, 0.25);
+}
+
+.sectionTitle {
+    font-size: 56px;
+    font-family: sans-serif;
+    font-weight: 600;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    color: #EA8607;
+}
+
+#imageSlider {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#mainImage {
+    width: 60%;
+    /* width: 55%; */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bgImage {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    background: linear-gradient(#f6f5f5ed, #f6f5f5ed)padding-box,
+        linear-gradient(45deg, rgb(255, 196, 67), rgb(222, 132, 48), rgba(253, 125, 5, 0.8))border-box;
+    border: 1px solid transparent;
+}
+
+#galleryImages {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 600px;
+    width: 30%;
+}
+
+#galleryImages::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    /* make scrollbar transparent */
+}
+
+.galleryImage {
+    width: 75%;
+    height: 50%;
+    margin: 2px 0px;
+}
+
+.galleryImage:hover {
+    cursor: pointer;
+    -webkit-filter: brightness(.8);
+    filter: brightness(.8);
+}
+
+/* ############################### Section-3 ############################### */
+#section-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+}
+
+#courses {
+    height: max-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.course {
+    border-radius: 20px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    background-color: #f6f5f5ed;
+    padding: 20px;
+    width: 350px;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all 200ms ease-in-out;
+}
+
+.course:hover {
+    transform: translateY(-10px);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.courseImage {
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.courseTitle {
+    text-transform: capitalize;
+    padding: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+}
+
+.courseDetail {
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Cairo', sans-serif;
+    text-align: left;
+}
+
+.coursePrice {
+    font-size: 24px;
+    font-weight: 600;
+    color: #006eff;
+}
+
+.soon {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    width: 130px;
+    height: 40px;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* {{{{{{{{{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}}}}}}}} */
+
+#loader {
+    margin-top: 30px;
+    display: flex;
+    height: max-content;
+    width: 85%;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-left: 20px;
+}
+
+.loading-card {
+    border-radius: 20px;
+    background-color: #f6f5f5ed;
+    padding: 20px;
+    width: 410px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.loading-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0));
+    animation: load 1s infinite;
+}
+
+@keyframes load {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .skeleton-card::after {
+        animation: none;
+    }
+}
+
+/* ############################### Section-4 ############################### */
+#section-4 {
+    margin-top: 40px;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#trainerSlider {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+}
+
+#trainers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 30px;
+    column-gap: 30px;
+    padding: 30px;
+    width: max-content;
+    height: max-content;
+}
+
+.trainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 400px;
+    border-radius: 50px;
+    background: linear-gradient(143.38deg, #f8c52c 0%, #EA8607 69.77%, #211201 125.59%);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px 0px;
+}
+
+.trainer:hover {
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 1px 4px;
+
+}
+
+.trainerImage {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(45deg, black, rgb(253, 170, 5))border-box;
+    border: 4px solid transparent;
+}
+
+.trainerName {
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+}
+
+.trainerDscp {
+    margin: 10px;
+    /* padding: 10px 15px; */
+    font-size: 18px;
+    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    width: 280px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+#left,
+#right {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0, 5s;
+}
+
+
+#left:hover,
+#right:hover {
+    color: rgb(233, 115, 4);
+}
+
+
+
+
+/* ############################### Go-Up Arrow ############################### */
+
+#goUp {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(237, 105, 4);
+    cursor: pointer;
+    font-size: 32px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+    color: white;
+}
+
+#goUp:hover {
+    background-color: #034478;
+}
+
+/* ############################### Counting ############################### */
+
+#section-6.counting {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: max-content;
+    margin: 20px;
+    padding: 20px;
+}
+
+.startCounting {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-radius: 5%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    height: max-content;
+    padding: 20px;
+    /* margin: 50px 0px; */
+    background: linear-gradient(#f6f5f5ed, #f6f5f5ed)padding-box,
+        linear-gradient(45deg, rgb(148, 109, 23), rgb(253, 125, 5))border-box;
+    /* border: 4px solid transparent; */
+    animation: bounce;
+    animation-duration: 2s;
+}
+
+[class*="count-"] {
+    width: 320px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 64px;
+    color: #333333;
+
+}
+
+.countTitle {
+    font-size: 52px;
+    font-weight: bold;
+    color: #333333;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.countFooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin: 0px 20px;
+}
+
+/* ############################### What is ELLabs ############################### */
+
+#section-5 {
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.521);
+    background-color: rgba(155, 149, 149, 0.25);
+}
+
+#section-5 .sectionTitle {
+    width: 40%;
+}
+
+.definition {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px;
+}
+
+.definition p {
+    width: 80%;
+    text-align: left;
+    font-size: 24px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+
+#section-6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* ############################### Google Map ############################### */
+
+#section-7 {
+    width: 90%;
+    height: max-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#section-7 p {
+    font-size: 32px;
+}
+
+#googleMap {
+    width: 100%;
+    height: 250px;
+    border: 4px dotted #006eff;
+
+}
+
+#googleMap iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* ############################### Footer ############################### */
+
+#footer {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-image: url("img/Frame 16.svg");
+
+}
+
+#info {
+    width: 400px;
+    height: max-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px 0px;
+}
+
+.footer-icon {
+    width: max-content;
+    height: max-content;
+    padding: 0px 10px;
+}
+
+.footer-icon i {
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-icon i:hover {
+    color: #de8109;
+    transform: scale(1.4);
+}
+
+
+
+
+
+
+/* ############################### Responsive ############################### */
+
+@media only screen and (max-width: 800px) {
+    #menu {
+        position: absolute;
+        background: rgb(17, 14, 11);
+        right: 0;
+        top: 0px;
+        width: 50%;
+        display: none;
+    }
+
+    #menu a {
+        padding: 0px 5px;
+
+    }
+
+    #menu a:hover {
+        margin: 15px 0px;
+    }
+
+    #menu a:active {
+        width: 100%;
+    }
+
+    #menu-icon {
+        z-index: 1;
+        display: block;
+        color: white;
+        padding: 20px;
+    }
+
+    #menu-icon:hover {
+        cursor: pointer;
+        color: rgb(9, 106, 197);
+    }
+
+    #menuClose {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background-color: rgb(203, 24, 24);
+        font-size: 20px;
+        color: white;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .rotating-text {
+        font-size: 32px;
+        transform: translateX(-80px);
+    }
+
+    #section-1 {
+        width: 100%;
+        height: 260px;
+    }
+
+    #section-1 #svg {
+        width: 100%;
+        height: 260px;
+    }
+
+    #imageSlider {
+        flex-direction: column;
+    }
+
+    #mainImage {
+        width: 80%;
+        height: auto;
+    }
+
+    #galleryImages {
+        flex-direction: row;
+        height: 200px;
+        width: 90%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        gap: 0.5%;
+    }
+
+    .galleryImage {
+        width: 50%;
+        height: 60%;
+    }
+
+
+    #courses {
+        width: 400px;
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .course {
+        width: 80%;
+        height: min-content;
+    }
+
+    .courseImage {
+        width: 250px;
+        height: 180px;
+    }
+
+    .courseTitle {
+        font-size: 28px;
+    }
+
+    .courseDetail {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    #loader {
+        width: 400px;
+    }
+
+    .loading-card {
+        width: 320px;
+        height: 400px;
+    }
+
+    #section-5 {
+        flex-direction: column;
+    }
+
+    #section-5 .sectionTitle {
+        width: 100%;
+    }
+
+    .definition {
+        width: 100%;
+    }
+
+    #section-6.counting {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        margin: 20px;
+        gap: 40px;
+    }
+
+
+    #info {
+        width: 250px;
+    }
+
+}
+
+
+
+
+
+
+
+/* #############################  End Of Code #############################   */
